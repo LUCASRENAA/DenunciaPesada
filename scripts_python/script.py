@@ -40,7 +40,7 @@ def criarTabelas(host,user,password):
     print("-" * 30 + "Criar tabelas" + "-" *30)
 
     texto = """
-     CREATE TABLE professor (
+     CREATE TABLE Professor (
     codigo VARCHAR(40),
     nome VARCHAR(40),
     curso VARCHAR(40),
@@ -48,9 +48,12 @@ def criarTabelas(host,user,password):
 
         PRIMARY KEY (codigo)
     );
+    """
+    textos.append(texto)
 
 
-     CREATE TABLE estudante (
+    texto = """
+     CREATE TABLE Estudante (
   matricula VARCHAR(40),
     nome VARCHAR(40),
     curso VARCHAR(40),
@@ -58,6 +61,11 @@ def criarTabelas(host,user,password):
 
         PRIMARY KEY (matricula)
     );
+
+       
+    """
+    textos.append(texto)
+    texto = """
 
          CREATE TABLE Ocorrencia (
      id int NOT NULL AUTO_INCREMENT,
@@ -67,12 +75,19 @@ def criarTabelas(host,user,password):
     descricao VARCHAR(40),
     infoAdicional VARCHAR(40),
 
-        PRIMARY KEY (id)
+        PRIMARY KEY (id),
+
+        codigoProfessor VARCHAR(40),
+
+        matriculaEstudante VARCHAR(40),
+
+           FOREIGN KEY (matriculaEstudante) REFERENCES Estudante(matricula),
+        FOREIGN KEY (codigoProfessor) REFERENCES Professor(codigo)
+
     );  
 
     """
     textos.append(texto)
-
 
     #conectarnobanco(texto,host,user,password)
     for texto in textos:
