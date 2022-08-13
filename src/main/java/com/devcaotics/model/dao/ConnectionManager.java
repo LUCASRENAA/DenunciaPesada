@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class ConnectionManager {
     
-    private static final String URL = "jdbc:mysql://localhost:3306/jogodobicho";
+    private static final String URL = "jdbc:mysql://localhost:3306/denunciapesada";
     private static final String USER = "root";
     private static final String PASSWORD = "";
     

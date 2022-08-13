@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.devcaotics.model.entities.Estudante;
+import com.devcaotics.model.entities.Professor;
 import com.devcaotics.model.entities.ResultadoDoBicho;
 
 public class ResultadoDoBichoRepository implements GenericRepository<ResultadoDoBicho, String> {
@@ -180,6 +182,18 @@ public class ResultadoDoBichoRepository implements GenericRepository<ResultadoDo
 		 
 
 		}
+
+	@Override
+	public Estudante readCodigo(String i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Professor readProfessor(String i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 }
