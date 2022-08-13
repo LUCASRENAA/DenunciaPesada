@@ -1,0 +1,31 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+main h1 {
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+#numeros-sorteio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 100px;
+    background-color: rgb(37, 37, 39);
+    box-shadow: 2px 3px 4px rgb(24, 139, 233);
+}
+
+#numeros-sorteio h1 {
+
+    color: #FFF;
+    letter-spacing: 6px;
+    font-weight: 700;
+}

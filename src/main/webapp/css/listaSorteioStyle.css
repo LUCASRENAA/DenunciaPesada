@@ -1,0 +1,43 @@
+main {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+
+main table,
+td,
+th {
+
+    border: 1px solid #000;
+    border-collapse: collapse;
+    font-weight: 700;
+}
+
+main table {
+
+    box-shadow: 3px 3px 4px rgb(24, 139, 233);
+}
+
+main td,
+th {
+    padding: 5px 10px;
+}
+
+main th {
+    background-color: rgb(37, 37, 39);
+    color: #FFF;
+}
+
+main td {
+    letter-spacing: 3px;
+}
+
+main table tr:nth-child(odd) {
+    background-color: #ddd;
+}
+
+main table tr:nth-child(even) {
+    background-color: #FFF;
+}
