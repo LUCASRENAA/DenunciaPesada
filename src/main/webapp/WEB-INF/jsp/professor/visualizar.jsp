@@ -45,7 +45,7 @@
                 <th>Matricula</th>
                 <th>Nome </th>
                                 <th>Curso </th>
-                                <th>Ano de Entrada </th>
+                                <th>Disciplina </th>
                                                 <th>Editar </th>
                                                 <th>Excluir </th>
                 
@@ -71,8 +71,8 @@
 							
 		
 				<td>${item.materiaLecionada}</td>
-								<td><a hrfe="/estudante/editar/${item.codigo}">${item.codigo}</a></td>
-								<td><a hrfe="/estudante/excluir/${item.codigo}">${item.codigo}</a></td>
+								<td><a href="/professor/editar/${item.codigo}">${item.codigo}</a></td>
+								<td><a href="/professor/excluir/${item.codigo}">${item.codigo}</a></td>
 				
 				</tr>
 				

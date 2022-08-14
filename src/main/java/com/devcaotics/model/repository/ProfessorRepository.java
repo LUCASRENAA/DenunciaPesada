@@ -39,11 +39,7 @@ public class ProfessorRepository implements GenericRepository<Professor, String>
 	        }		
 	}
 
-	@Override
-	public void update(Professor t) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 
 
@@ -130,7 +126,7 @@ public class ProfessorRepository implements GenericRepository<Professor, String>
 	    }
 
 	@Override
-	public Professor read(int id) {
+	public Professor read(Professor t) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -145,6 +141,16 @@ public class ProfessorRepository implements GenericRepository<Professor, String>
 	public Estudante readCodigo(String i) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+
+
+
+	@Override
+	public void update(Professor t) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	 

@@ -3,6 +3,7 @@
     
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
+    
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -43,7 +44,7 @@
       <form method="post" action="/professor/cadastro">
   <div class="form-group">
     <label for="exampleInputEmail1">Código</label>
-    <input  name="codigo" type="text" class="form-control" id="matricula" aria-describedby="emailHelp" placeholder="Digite o código do professor">
+    <input  name="codigo" value="${estudante.nome}" type="text" class="form-control" id="matricula" aria-describedby="emailHelp" placeholder="Digite o código do professor">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Nome</label>

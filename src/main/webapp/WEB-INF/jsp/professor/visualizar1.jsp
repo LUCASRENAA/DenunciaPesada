@@ -43,26 +43,25 @@
       <form method="post" action="/estudante/cadastro">
   <div class="form-group">
     <label for="exampleInputEmail1">Matricula</label>
-    <input value="${estudante.matricula}" name="matricula" type="text" class="form-control" id="matricula" aria-describedby="emailHelp" placeholder="Digite a matricula do aluno">
+    <input disabled value="${estudante.matricula}" name="matricula" type="text" class="form-control" id="matricula" aria-describedby="emailHelp" placeholder="Digite a matricula do aluno">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Nome</label>
-    <input value="${estudante.nome}" name="nome"type="text" class="form-control" id="nome" placeholder="Nome">
+    <input disabled value="${estudante.nome}" name="nome"type="text" class="form-control" id="nome" placeholder="Nome">
   </div>
   
   
     <div class="form-group">
     <label for="exampleInputPassword1">Curso</label>
-    <input value="${estudante.curso}"  name="curso"type="text" class="form-control" id="nome" placeholder="Curso">
+    <input disabled value="${estudante.curso}"  name="curso"type="text" class="form-control" id="nome" placeholder="Curso">
   </div>
   
     <div class="form-group">
     <label for="exampleInputPassword1">Ano de Entrada</label>
-    <input value="${estudante.anoEntrada}"  name="anoEntrada"type="text" class="form-control" id="anoEntrada" placeholder="Ano de Entrada">
+    <input disabled value="${estudante.anoEntrada}"  name="anoEntrada"type="text" class="form-control" id="anoEntrada" placeholder="Ano de Entrada">
   </div>
   
   
-  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
       </div>
 </body>

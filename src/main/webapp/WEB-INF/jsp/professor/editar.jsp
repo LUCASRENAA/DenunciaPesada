@@ -40,7 +40,7 @@
     </footer>
     	<div class="container">
 	
-      <form method="post" action="/estudante/cadastro">
+      <form method="post" action="/estudante/editar/${estudante.matricula}/submit">
   <div class="form-group">
     <label for="exampleInputEmail1">Matricula</label>
     <input value="${estudante.matricula}" name="matricula" type="text" class="form-control" id="matricula" aria-describedby="emailHelp" placeholder="Digite a matricula do aluno">

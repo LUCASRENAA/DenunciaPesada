@@ -41,7 +41,50 @@ public class EstudanteController {
 		return "estudante/cadastro";
 		
 	}
+	@RequestMapping("/estudante/editar/{matricula}")
+	public String visualiza(Model m, @PathVariable("matricula") String matricula) {
+		
+		Estudante c = Facade.getCurrentInstance().readCodigo(matricula);
+		
+		m.addAttribute("estudante", c);
+		
+		return "estudante/editar";
+		
+	}
 	
+	@RequestMapping("/estudante/ver/{matricula}")
+	public String visualiza2(Model m, @PathVariable("matricula") String matricula) {
+		
+		Estudante c = Facade.getCurrentInstance().readCodigo(matricula);
+		
+		m.addAttribute("estudante", c);
+		
+		return "estudante/visualizar1";
+		
+	}
+	
+	
+	@RequestMapping("/estudante/excluir/{matricula}")
+	public String visualiza3(Model m, @PathVariable("matricula") String matricula) {
+		
+		Facade.getCurrentInstance().deleteEstudante(matricula);
+		
+		System.out.println(matricula);
+		return "index";
+		
+	}
+	
+	
+	
+	@RequestMapping("/estudante/editar/{matricula}/submit")
+	public String visualiza4(Model m,Estudante e , @PathVariable("matricula") String matricula) {
+		
+		Facade.getCurrentInstance().updateEstudante(e);
+		
+		System.out.println(matricula);
+		return "index";
+		
+	}
 	
 
 	

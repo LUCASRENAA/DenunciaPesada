@@ -54,7 +54,7 @@
 			<tr>
 							
 		
-				<td>${item.matricula}</td>
+				<td><a href="/estudante/ver/${item.matricula}">${item.matricula}</a></td>
 				
 				
 				
@@ -71,8 +71,8 @@
 							
 		
 				<td>${item.anoEntrada}</td>
-								<td><a hrfe="/estudante/editar/${item.matricula}">${item.matricula}</a></td>
-								<td><a hrfe="/estudante/excluir/${item.matricula}">${item.matricula}</a></td>
+								<td><a href="/estudante/editar/${item.matricula}">${item.matricula}</a></td>
+								<td><a href="/estudante/excluir/${item.matricula}">${item.matricula}</a></td>
 				
 				</tr>
 				

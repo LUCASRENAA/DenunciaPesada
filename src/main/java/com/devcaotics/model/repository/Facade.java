@@ -86,10 +86,21 @@ public class Facade {
      }
  
  
-    public ResultadoDoBicho read(int id){
-    	
-        return this.rResultado.read(id);
-     }
+ 
+	public Estudante readCodigo(String matricula) {
+		// TODO Auto-generated method stub
+        return this.rEstudante.readCodigo(matricula);
+	}
+	
+	public void deleteEstudante(String matricula) {
+		// TODO Auto-generated method stub
+       this.rEstudante.delete(matricula);
+	}
+	
+
+	   public void updateEstudante(Estudante c){
+	        this.rEstudante.update(c);
+	    }
 
 
 

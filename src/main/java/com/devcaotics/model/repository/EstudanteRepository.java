@@ -39,9 +39,35 @@ public class EstudanteRepository implements GenericRepository<Estudante, String>
 	        }		
 	}
 
-	@Override
 	public void update(Estudante t) {
-		// TODO Auto-generated method stub
+		String sql = "update estudante set nome=? ,curso=? ,anoEntrada=?"
+                + " where matricula=? ";
+        
+        
+        
+        try {
+            
+            PreparedStatement pstm = com.devcaotics.model.
+                dao.ConnectionManager.getCurrentConnection().prepareStatement(sql);
+            
+            //pstm.setString(1, t.getMatricula());
+            pstm.setString(1, t.getNome());
+            pstm.setString(2, t.getCurso());
+            
+            pstm.setInt(3, t.getAnoEntrada());
+            pstm.setString(4, t.getMatricula());
+            System.out.println("teste");
+            System.out.println( t.getMatricula());
+            System.out.println( t);
+            	
+            int rows = pstm.executeUpdate();
+            pstm.close();
+            System.out.println(rows);
+        } catch (SQLException ex) {
+            Logger.getLogger(EstudanteRepository.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(EstudanteRepository.class.getName()).log(Level.SEVERE, null, ex);
+        }
 		
 	}
 
@@ -49,8 +75,38 @@ public class EstudanteRepository implements GenericRepository<Estudante, String>
 
 	@Override
 	public void delete(String i) {
-		// TODO Auto-generated method stub
-		
+		 String sql = "delete from estudante where matricula = ?;";
+			System.out.println(sql);
+			System.out.println(i);
+
+	        try {
+	            
+	            PreparedStatement pstm = com.devcaotics.model.
+	                    dao.ConnectionManager.getCurrentConnection().prepareStatement(sql);
+				System.out.println("alo");
+
+	            pstm.setString(1, i);
+				System.out.println("alo2");
+
+				int rowCount = pstm.executeUpdate();
+				 
+				System.out
+						.println("Record Deleted successfully from database. Row Count returned is :: "
+								+ rowCount);				System.out.println("teste");
+
+	            
+	        }
+		  
+		  catch (SQLException ex) {
+	            Logger.getLogger(sql);
+				System.out.println(sql);
+
+	        } catch (ClassNotFoundException ex) {
+				System.out.println("a");
+
+	            Logger.getLogger(sql);
+	        }
+		  
 	}
 
 	@Override
@@ -114,7 +170,7 @@ public class EstudanteRepository implements GenericRepository<Estudante, String>
 	                c.setNome(result.getString("nome"));
 	                c.setCurso(result.getString("curso"));
 	                c.setAnoEntrada(result.getInt("anoEntrada"));
-
+	                System.out.println("alo2");
 	                return c;
 	            }
 	            
@@ -130,7 +186,7 @@ public class EstudanteRepository implements GenericRepository<Estudante, String>
 	    }
 
 	@Override
-	public Estudante read(int id) {
+	public Estudante read(Estudante t) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -146,6 +202,8 @@ public class EstudanteRepository implements GenericRepository<Estudante, String>
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 	 
 

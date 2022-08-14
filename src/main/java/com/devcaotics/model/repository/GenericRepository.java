@@ -19,7 +19,7 @@ public interface GenericRepository<T, I> {
     
     public void create(T t);
     public void update(T t);
-    public T read(int id);
+    public T read(T t);
     public void delete(I i);
     public List<T> readAll();
 	int lastId();
