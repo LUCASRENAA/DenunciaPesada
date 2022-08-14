@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.devcaotics.model.entities.Estudante;
 import com.devcaotics.model.entities.Professor;
-import com.devcaotics.model.entities.ResultadoDoBicho;
 import com.devcaotics.model.repository.Facade;
 
 @Controller

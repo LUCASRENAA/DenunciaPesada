@@ -8,8 +8,8 @@ package com.devcaotics.model.repository;
 import java.util.List;
 
 import com.devcaotics.model.entities.Estudante;
+import com.devcaotics.model.entities.Ocorrencia;
 import com.devcaotics.model.entities.Professor;
-import com.devcaotics.model.entities.ResultadoDoBicho;
 
 /**
  *
@@ -25,5 +25,6 @@ public interface GenericRepository<T, I> {
 	int lastId();
 	Estudante readCodigo(String i);
 	Professor readProfessor(String i);
+	Ocorrencia read_integer(Integer i);
 
 }

@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.devcaotics.model.entities.Estudante;
-import com.devcaotics.model.entities.ResultadoDoBicho;
 import com.devcaotics.model.repository.Facade;
 
 @Controller

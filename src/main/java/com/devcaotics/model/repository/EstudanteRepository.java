@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.devcaotics.model.entities.Estudante;
+import com.devcaotics.model.entities.Ocorrencia;
 import com.devcaotics.model.entities.Professor;
 
 public class EstudanteRepository implements GenericRepository<Estudante, String> {
@@ -199,6 +200,12 @@ public class EstudanteRepository implements GenericRepository<Estudante, String>
 
 	@Override
 	public Professor readProfessor(String i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ocorrencia read_integer(Integer i) {
 		// TODO Auto-generated method stub
 		return null;
 	}

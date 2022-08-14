@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.devcaotics.model.entities.Estudante;
+import com.devcaotics.model.entities.Ocorrencia;
 import com.devcaotics.model.entities.Professor;
 
 public class ProfessorRepository implements GenericRepository<Professor, String> {
@@ -180,8 +181,48 @@ public class ProfessorRepository implements GenericRepository<Professor, String>
 
 	@Override
 	public void update(Professor t) {
-		// TODO Auto-generated method stub
+		String sql = "update professor set nome=? ,curso=? ,materiaLecionada=?"
+                + " where codigo=? ";
+        
+        
+        
+        try {
+            
+            PreparedStatement pstm = com.devcaotics.model.
+                dao.ConnectionManager.getCurrentConnection().prepareStatement(sql);
+            
+            //pstm.setString(1, t.getMatricula());
+            pstm.setString(1, t.getNome());
+            pstm.setString(2, t.getCurso());
+            
+            pstm.setString(3, t.getMateriaLecionada());
+            pstm.setString(4, t.getCodigo());
+            System.out.println("teste");
+            System.out.println( t.getCodigo());
+            System.out.println( t);
+            	
+            int rows = pstm.executeUpdate();
+            pstm.close();
+            System.out.println(rows);
+            System.out.println("teste20");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(EstudanteRepository.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(EstudanteRepository.class.getName()).log(Level.SEVERE, null, ex);
+        }
 		
+	}
+
+
+
+
+
+
+	@Override
+	public Ocorrencia read_integer(Integer i) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	 
