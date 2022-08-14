@@ -7,6 +7,7 @@ package com.devcaotics.model.repository;
 
 
 import com.devcaotics.model.entities.Estudante;
+import com.devcaotics.model.entities.Ocorrencia;
 import com.devcaotics.model.entities.Professor;
 
 import java.util.List;
@@ -21,12 +22,14 @@ public class Facade {
     
     private GenericRepository<Estudante, String> rEstudante = null; 
     private GenericRepository<Professor, String> rProfessor = null; 
+    private GenericRepository<Ocorrencia, String> rOcorrencia = null; 
 
 
     private Facade(){
         
     	this.rEstudante = new EstudanteRepository();
     	this.rProfessor = new ProfessorRepository();
+    	this.rOcorrencia = new OcorrenciaRepository();
 
 
     }
@@ -70,6 +73,10 @@ public class Facade {
         return this.rProfessor.readAll();
     }
 
+    
+    public List<Ocorrencia> readAllOcorrencias(){
+        return this.rOcorrencia.readAll();
+    }
  
  
 	public Estudante readCodigo(String matricula) {

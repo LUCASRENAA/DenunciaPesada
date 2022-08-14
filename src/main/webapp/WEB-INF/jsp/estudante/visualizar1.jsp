@@ -32,7 +32,11 @@
     </nav>
 
     <main>
-
+   <table>
+                       <tr>
+       <th>Estudante</th>    
+           </tr>
+           </table>
     </main>
 
     <footer>

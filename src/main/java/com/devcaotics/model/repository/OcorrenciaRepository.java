@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  *
  * @author ALUNO
  */
-public class OcorrenciaRepository implements GenericRepository<Ocorrencia, Integer>{
+public class OcorrenciaRepository implements GenericRepository<Ocorrencia, String>{
 
     @Override
     public void create(Ocorrencia t) {
@@ -128,11 +128,7 @@ public class OcorrenciaRepository implements GenericRepository<Ocorrencia, Integ
         return null;
     }
 
-    @Override
-    public void delete(Integer i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+  
     @Override
     public List<Ocorrencia> readAll() {
         
@@ -150,28 +146,31 @@ public class OcorrenciaRepository implements GenericRepository<Ocorrencia, Integ
             while(r.next()){
                 
                 Ocorrencia v = new Ocorrencia();
-                
+                v.setId(r.getInt("id"));
+
                 v.setData(r.getString("data"));
                 v.setLocal(r.getString("local"));
                 v.setDescricao(r.getString("descricao"));
-                v.setInfoAdicional(r.getString("setInfoAdicional"));
+                v.setInfoAdicional(r.getString("infoAdicional"));
                 
                 String sql2 = "select * from estudante where matricula = ?";
                 
                 PreparedStatement pstm2 = ConnectionManager.getCurrentConnection()
                     .prepareStatement(sql2);
+                System.out.println(r.getString("matriculaEstudante"));
+                pstm2.setString(1, r.getString("matriculaEstudante"));
                 
-                pstm2.setString(1, r.getString("matricula"));
-                
-                ResultSet r2 = pstm2.executeQuery(sql2);
+                ResultSet r2 = pstm2.executeQuery();
                 
                 if(r2.next()){
                     Estudante c = new Estudante();
-                    
+                    c.setMatricula(r2.getString("matricula"));
+
                     c.setNome(r2.getString("nome"));
                     c.setCurso(r2.getString("curso"));
                     c.setAnoEntrada(r2.getInt("anoEntrada"));
-                    
+                    System.out.println("será que chego aqui?");
+
                     v.setEstudante(c);
                     
                 }
@@ -181,15 +180,18 @@ public class OcorrenciaRepository implements GenericRepository<Ocorrencia, Integ
                 PreparedStatement pstm3 = ConnectionManager.getCurrentConnection()
                     .prepareStatement(sql3);
                 
-                pstm3.setString(1, r.getString("codigo"));
+                pstm3.setString(1, r.getString("codigoProfessor"));
                 
-                ResultSet r3 = pstm3.executeQuery(sql3);
+                ResultSet r3 = pstm3.executeQuery();
                 
                 if(r3.next()){
                     Professor m = new Professor();
                     
                     m.setCodigo(r3.getString("codigo"));
-                    //faz o resto
+                    m.setNome(r3.getString("nome"));
+                    m.setCurso(r3.getString("curso"));
+                    m.setMateriaLecionada(r3.getString("materiaLecionada"));
+
                     
                     v.setProfessor(m);
                     
@@ -233,6 +235,12 @@ public class OcorrenciaRepository implements GenericRepository<Ocorrencia, Integ
 	public Professor readProfessor(String i) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void delete(String i) {
+		// TODO Auto-generated method stub
+		
 	}
     
 }

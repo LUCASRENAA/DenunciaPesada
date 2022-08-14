@@ -29,8 +29,13 @@
     </nav>
 
     <main>
+    
           <a href="estudante/cadastrar">Cadastrar</a>
-      
+         <table>
+                       <tr>
+       <th>Estudantes</th>    
+           </tr>
+           </table>
           <c:forEach items="${estudantes}" var="item">
           <style>P.blocktext {
     margin-left: auto;
@@ -39,6 +44,8 @@
 }</style>
           
          <P class="blocktext"><h1></h1>.</P>
+         
+        
             <table>
                   
             

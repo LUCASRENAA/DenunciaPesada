@@ -32,7 +32,11 @@
     </nav>
 
     <main>
-
+   <table>
+                       <tr>
+       <th>Professor</th>    
+           </tr>
+           </table>
     </main>
 
     <footer>
@@ -58,7 +62,7 @@
   
     <div class="form-group">
     <label for="exampleInputPassword1">Ano de Entrada</label>
-    <input disabled value="${estudante.anoEntrada}"  name="anoEntrada"type="text" class="form-control" id="anoEntrada" placeholder="Ano de Entrada">
+    <input disabled value="${estudante.materiaLecionada}"  name="anoEntrada"type="text" class="form-control" id="anoEntrada" placeholder="Ano de Entrada">
   </div>
   
   

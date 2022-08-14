@@ -10,8 +10,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/listaSorteioStyle.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/listaSorteioStyle.css">
     <title>Denuncia Pesada</title>
 </head>
 
@@ -29,15 +29,13 @@
     </nav>
 
     <main>
-    <a href="professor/cadastrar">Cadastrar</a>
-    
-       <table>
+   <table>
                        <tr>
-       <th>Professores</th>    
+       <th>Ocorrências</th>    
            </tr>
            </table>
       
-          <c:forEach items="${professores}" var="item">
+          <c:forEach items="${ocorrencias}" var="item">
           <style>P.blocktext {
     margin-left: auto;
     margin-right: auto;
@@ -49,10 +47,15 @@
                   
             
             <tr>
-                <th>Matricula</th>
-                <th>Nome </th>
-                                <th>Curso </th>
-                                <th>Disciplina </th>
+                            <th>ID</th>
+            
+                <th>Data</th>
+                <th>Local </th>
+                                <th>Descrição </th>
+                                <th>Informação adicional </th>
+                                                                <th>Matricula </th>
+                                                                <th>Código </th>
+                                
                                                 <th>Editar </th>
                                                 <th>Excluir </th>
                 
@@ -61,25 +64,24 @@
 			<tr>
 							
 		
-				<td><a href="/professor/ver/${item.codigo}">${item.codigo}</a></td>
 				
 				
 				
 							
 		
-				<td>${item.nome}</td>
+				<td>${item.id}</td>
 				
+								<td>${item.data}</td>
 				
+											<td>${item.local}</td>
+											<td>${item.descricao}</td>
+											<td>${item.infoAdicional}</td>
+											<td>${item.id}</td>
+											<td>${item.id}</td>
 							
-		
-				<td>${item.curso}</td>
-				
-				
-							
-		
-				<td>${item.materiaLecionada}</td>
-								<td><a href="/professor/editar/${item.codigo}">${item.codigo}</a></td>
-								<td><a href="/professor/excluir/${item.codigo}">${item.codigo}</a></td>
+	
+								<td><a href="/professor/editar/${item.id}">${item.id}</a></td>
+								<td><a href="/professor/excluir/${item.id}">${item.id}</a></td>
 				
 				</tr>
 				
