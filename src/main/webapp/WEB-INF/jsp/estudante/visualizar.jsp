@@ -29,6 +29,7 @@
     </nav>
 
     <main>
+          <a href="estudante/cadastrar">Cadastrar</a>
       
           <c:forEach items="${estudantes}" var="item">
           <style>P.blocktext {

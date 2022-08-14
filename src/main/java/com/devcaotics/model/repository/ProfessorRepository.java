@@ -45,9 +45,40 @@ public class ProfessorRepository implements GenericRepository<Professor, String>
 
 	@Override
 	public void delete(String i) {
-		// TODO Auto-generated method stub
-		
+		 String sql = "delete from professor where codigo = ?;";
+			System.out.println(sql);
+			System.out.println(i);
+
+	        try {
+	            
+	            PreparedStatement pstm = com.devcaotics.model.
+	                    dao.ConnectionManager.getCurrentConnection().prepareStatement(sql);
+				System.out.println("alo");
+
+	            pstm.setString(1, i);
+				System.out.println("alo2");
+
+				int rowCount = pstm.executeUpdate();
+				 
+				System.out
+						.println("Record Deleted successfully from database. Row Count returned is :: "
+								+ rowCount);				System.out.println("teste");
+
+	            
+	        }
+		  
+		  catch (SQLException ex) {
+	            Logger.getLogger(sql);
+				System.out.println(sql);
+
+	        } catch (ClassNotFoundException ex) {
+				System.out.println("a");
+
+	            Logger.getLogger(sql);
+	        }
+		  
 	}
+
 
 	@Override
 	public List<Professor> readAll() {

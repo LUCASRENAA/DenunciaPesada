@@ -40,10 +40,10 @@
     </footer>
     	<div class="container">
 	
-      <form method="post" action="/estudante/editar/${estudante.matricula}/submit">
+      <form method="post" action="/professor/editar/${estudante.codigo}/submit">
   <div class="form-group">
-    <label for="exampleInputEmail1">Matricula</label>
-    <input value="${estudante.matricula}" name="matricula" type="text" class="form-control" id="matricula" aria-describedby="emailHelp" placeholder="Digite a matricula do aluno">
+    <label for="exampleInputEmail1">codigo</label>
+    <input value="${estudante.codigo}" name="codigo" type="text" class="form-control" id="codigo" aria-describedby="emailHelp" placeholder="Digite o codigo do aluno">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Nome</label>
@@ -57,8 +57,8 @@
   </div>
   
     <div class="form-group">
-    <label for="exampleInputPassword1">Ano de Entrada</label>
-    <input value="${estudante.anoEntrada}"  name="anoEntrada"type="text" class="form-control" id="anoEntrada" placeholder="Ano de Entrada">
+    <label for="exampleInputPassword1">Disciplina</label>
+    <input value="${estudante.materiaLecionada}"  name="materiaLecionada"type="text" class="form-control" id="materiaLecionada" placeholder="Ano de Entrada">
   </div>
   
   

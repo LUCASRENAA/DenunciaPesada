@@ -40,10 +40,10 @@
     </footer>
     	<div class="container">
 	
-      <form method="post" action="/estudante/cadastro">
+      <form method="post" action="/professor/cadastro">
   <div class="form-group">
-    <label for="exampleInputEmail1">Matricula</label>
-    <input disabled value="${estudante.matricula}" name="matricula" type="text" class="form-control" id="matricula" aria-describedby="emailHelp" placeholder="Digite a matricula do aluno">
+    <label for="exampleInputEmail1">codigo</label>
+    <input disabled value="${estudante.codigo}" name="codigo" type="text" class="form-control" id="codigo" aria-describedby="emailHelp" placeholder="Digite o codigo do aluno">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Nome</label>

@@ -97,10 +97,25 @@ public class Facade {
        this.rEstudante.delete(matricula);
 	}
 	
+	
+	public void deleteProfessor(String codigo) {
+		// TODO Auto-generated method stub
+       this.rProfessor.delete(codigo);
+	}
+	
+	
 
 	   public void updateEstudante(Estudante c){
 	        this.rEstudante.update(c);
 	    }
+	   public void updateProfessor(Professor c){
+	        this.rProfessor.update(c);
+	    }
+
+	public Professor readProfessor(String codigo) {
+		// TODO Auto-generated method stub
+        return this.rProfessor.readProfessor(codigo);
+	}
 
 
 
