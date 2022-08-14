@@ -53,8 +53,8 @@
                 <th>Local </th>
                                 <th>Descrição </th>
                                 <th>Informação adicional </th>
-                                                                <th>Matricula </th>
-                                                                <th>Código </th>
+                                                                <th>Estudante </th>
+                                                                <th>Professor </th>
                                 
                                                 <th>Editar </th>
                                                 <th>Excluir </th>
@@ -76,8 +76,9 @@
 											<td>${item.local}</td>
 											<td>${item.descricao}</td>
 											<td>${item.infoAdicional}</td>
-											<td>${item.id}</td>
-											<td>${item.id}</td>
+											
+											<td><a href="/estudante/ver/${item.estudante.matricula}">${item.estudante.nome}</a></td>
+											<td><a href="/professor/ver/${item.professor.codigo}">${item.professor.nome}</a></td>
 							
 	
 								<td><a href="/professor/editar/${item.id}">${item.id}</a></td>

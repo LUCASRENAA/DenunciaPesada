@@ -48,7 +48,10 @@ public class Facade {
     public void createEstudante(Estudante c){
         this.rEstudante.create(c);
     }
-    
+
+    public void createOcorrencia(Ocorrencia c){
+        this.rOcorrencia.create(c);
+    }
     public void createProfessor(Professor c){
         this.rProfessor.create(c);
     }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.devcaotics.model.entities.Estudante;
 import com.devcaotics.model.entities.Ocorrencia;
+import com.devcaotics.model.entities.Professor;
 import com.devcaotics.model.repository.Facade;
 
 @Controller
@@ -25,6 +26,25 @@ public class OcorrenciaController {
 		
 	}
 	
+	@RequestMapping("/ocorrencia/cadastro")
+	public String cadastroocorrencia(Model m) {
 	
+		return "ocorrencia/cadastro";
+		
+	}
+	
+	@RequestMapping("/ocorrencia/cadastro/submit")
+	public String fazPedido(Model m, Ocorrencia p, Estudante x, Professor c, String matricula,String codigo) {
+			
+		p.setEstudante(Facade.getCurrentInstance().readCodigo(matricula));
+		p.setProfessor(Facade.getCurrentInstance().readProfessor(codigo));
+		Facade.getCurrentInstance().createOcorrencia(p);
+		m.addAttribute("msg6","Pedido realizado sucesso!");
+		
+		List <Ocorrencia> pedidos = Facade.getCurrentInstance().readAllOcorrencias();
+		m.addAttribute("pedido", pedidos);
+		
+	return "cliente/visualizarPedidos";
+	}	
 
 }
