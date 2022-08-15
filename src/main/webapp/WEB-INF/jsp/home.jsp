@@ -29,6 +29,8 @@
     </nav>
 
     <main>
+    
+    <a href="/ocorrencia/cadastro">Cadastrar ocorrencia</a>
    <table>
                        <tr>
        <th>Ocorrências</th>    

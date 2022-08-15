@@ -40,33 +40,87 @@
     </footer>
     	<div class="container">
 	
-      <form method="post" action="/estudante/cadastro">
+      <form method="post" action="/ocorrencia/cadastro/submit">
   <div class="form-group">
-    <label for="exampleInputEmail1">Matricula</label>
-    <input value="${estudante.matricula}" name="matricula" type="text" class="form-control" id="matricula" aria-describedby="emailHelp" placeholder="Digite a matricula do aluno">
+    <label for="exampleInputEmail1">Data</label>
+    <input value="${estudante.matricula}" name="data" type="text" class="form-control" id="matricula" aria-describedby="emailHelp" placeholder="Digite a matricula do aluno">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Nome</label>
-    <input value="${estudante.nome}" name="nome"type="text" class="form-control" id="nome" placeholder="Nome">
+    <label for="exampleInputPassword1">Local</label>
+    <input value="${estudante.nome}" name="local"type="text" class="form-control" id="nome" placeholder="Nome">
   </div>
   
   
     <div class="form-group">
-    <label for="exampleInputPassword1">Curso</label>
-    <input value="${estudante.curso}"  name="curso"type="text" class="form-control" id="nome" placeholder="Curso">
+    <label for="exampleInputPassword1">Descrição</label>
+    <input value="${estudante.curso}"  name="descricao"type="text" class="form-control" id="nome" placeholder="Curso">
   </div>
   
     <div class="form-group">
-    <label for="exampleInputPassword1">Ano de Entrada</label>
-    <input value="${estudante.anoEntrada}"  name="anoEntrada"type="text" class="form-control" id="anoEntrada" placeholder="Ano de Entrada">
+    <label for="exampleInputPassword1">Informação adicional</label>
+    <input value="${estudante.anoEntrada}"  name="infoAdicional"type="text" class="form-control" id="anoEntrada" placeholder="Ano de Entrada">
   </div>
   
+
+
+    <input    name="matricula"type="text" class="form-control" id="teste" placeholder="Ano de Entrada">
+    <input   name="codigo"type="text" class="form-control" id="teste2" placeholder="Ano de Entrada">
+
+  <p></p>
+    
+    
+    
   
+  <script>
+  
+  function mudarSelect(valor){
+	  document.getElementById("teste").value = valor;
+
+	}
+  
+  
+  function mudarSelect2(valor){
+	  document.getElementById("teste2").value = valor;
+	}
+  </script>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<select class="form-control"  onchange="mudarSelect(this.value)" id="teste3">
+  
+    <c:forEach items="${estudantes}" var="item">
+        <option value="${item.matricula}">${item.matricula}</option>
+    
+    		</c:forEach>
+    		  </select>
+    		  <p></p>
+    		
+    		    <select class="form-control"onchange="mudarSelect2(this.value)" id="teste4">
+  
+    <c:forEach items="${professores}"  var="item">
+        <option   value="${item.codigo}">${item.codigo}</option>
+    
+    
+    		</c:forEach>
+    		  </select>
       </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 </html>
 
+
+<script>
+
+onload = function () { 
+
+	var select = document.getElementById("teste3");
+	var select2 = document.getElementById("teste4");
+	var opcaoValor = select.options[select.selectedIndex].value
+	var opcaoValor2 = select2.options[select.selectedIndex].value
+
+	
+	 document.getElementById("teste").value = opcaoValor;
+	 document.getElementById("teste2").value = opcaoValor2;
+
+ }</script>

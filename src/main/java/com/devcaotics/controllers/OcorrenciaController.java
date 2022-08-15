@@ -29,13 +29,20 @@ public class OcorrenciaController {
 	@RequestMapping("/ocorrencia/cadastro")
 	public String cadastroocorrencia(Model m) {
 	
+List<Estudante> estudantes = Facade.getCurrentInstance().readAllEstudantes();
+		
+		m.addAttribute("estudantes",estudantes);
+		
+List<Professor> professores = Facade.getCurrentInstance().readAllProfessores();
+		
+		m.addAttribute("professores",professores);
 		return "ocorrencia/cadastro";
 		
 	}
 	
 	@RequestMapping("/ocorrencia/cadastro/submit")
 	public String fazPedido(Model m, Ocorrencia p, Estudante x, Professor c, String matricula,String codigo) {
-			
+			System.out.println(matricula);
 		p.setEstudante(Facade.getCurrentInstance().readCodigo(matricula));
 		p.setProfessor(Facade.getCurrentInstance().readProfessor(codigo));
 		Facade.getCurrentInstance().createOcorrencia(p);
@@ -44,7 +51,7 @@ public class OcorrenciaController {
 		List <Ocorrencia> pedidos = Facade.getCurrentInstance().readAllOcorrencias();
 		m.addAttribute("pedido", pedidos);
 		
-	return "cliente/visualizarPedidos";
+	return "home";
 	}	
 
 }
