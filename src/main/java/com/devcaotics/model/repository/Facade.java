@@ -93,6 +93,11 @@ public class Facade {
 	}
 	
 	
+	public void deleteOcorrencia(String id) {
+		// TODO Auto-generated method stub
+       this.rOcorrencia.delete(id);
+	}
+	
 	public void deleteProfessor(String codigo) {
 		// TODO Auto-generated method stub
        this.rProfessor.delete(codigo);

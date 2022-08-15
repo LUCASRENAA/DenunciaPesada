@@ -84,7 +84,7 @@
 							
 	
 								<td><a href="/professor/editar/${item.id}">${item.id}</a></td>
-								<td><a href="/professor/excluir/${item.id}">${item.id}</a></td>
+								<td><a href="/ocorrencia/excluir/${item.id}">${item.id}</a></td>
 				
 				</tr>
 				

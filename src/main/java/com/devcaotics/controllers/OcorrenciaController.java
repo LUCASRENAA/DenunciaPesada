@@ -53,5 +53,17 @@ List<Professor> professores = Facade.getCurrentInstance().readAllProfessores();
 		
 	return "home";
 	}	
+	
+	
+	@RequestMapping("/ocorrencia/excluir/{matricula}")
+	public String visualiza3(Model m, @PathVariable("matricula") String id) {
+		
+		Facade.getCurrentInstance().deleteOcorrencia(id);
+		
+		System.out.println(id);
+		return "index";
+		
+	}
+	
 
 }
