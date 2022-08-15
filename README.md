@@ -19,3 +19,34 @@ A demonstração da ferramenta será realizada através de um video que demonstr
 ```
 https://drive.google.com/file/d/1jHSqicngIJakKknDJv3fljTBdoR_uUeh/view?usp=sharing
 ```
+
+
+
+# Telas do sistema
+Aqui vou deixar as principais telas do sistema para fácil visualização 
+
+### Tela de Inicio
+Aqui na tela de inicio podemos ver todas as ocorrências cadastradas
+![vuln2.jpg](imagens_git/tela_inicial.jpg)
+
+
+## Telas do CRUD padrão
+Aqui veremos ver as telas do CRUD no foco da classe Estudante
+
+### Tela para visualizar todos os objetos
+![vuln2.jpg](imagens_git/tela_estudante.jpg)
+
+### Tela para visualizar o objeto
+![vuln2.jpg](imagens_git/ver_estudante.jpg)
+
+### Tela para cadastrar um novo objeto
+![vuln2.jpg](imagens_git/cadastrar_estudante.jpg)
+
+### Tela para editar o objetos
+![vuln2.jpg](imagens_git/editar_estudante.jpg)
+
+
+### Tela para deletar o objeto
+Não tem nenhuma tela, depois que você clica em excluir o objeto ele é excluído logo em seguida :D
+
+
