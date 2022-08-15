@@ -63,8 +63,8 @@
   
 
 
-    <input    name="matricula"type="text" class="form-control" id="teste" placeholder="Ano de Entrada">
-    <input   name="codigo"type="text" class="form-control" id="teste2" placeholder="Ano de Entrada">
+    <input  hidden  name="matricula"type="text" class="form-control" id="teste" placeholder="Ano de Entrada">
+    <input  hidden  name="codigo"type="text" class="form-control" id="teste2" placeholder="Ano de Entrada">
 
   <p></p>
     
@@ -83,26 +83,35 @@
 	  document.getElementById("teste2").value = valor;
 	}
   </script>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  
+  
+ 
+    <label>Estudante</label>
+    
 
 <select class="form-control"  onchange="mudarSelect(this.value)" id="teste3">
   
     <c:forEach items="${estudantes}" var="item">
-        <option value="${item.matricula}">${item.matricula}</option>
+        <option value="${item.matricula}">${item.nome}</option>
     
     		</c:forEach>
     		  </select>
+  
     		  <p></p>
+    		      <label>Professor</label>
+    		  
     		
     		    <select class="form-control"onchange="mudarSelect2(this.value)" id="teste4">
   
     <c:forEach items="${professores}"  var="item">
-        <option   value="${item.codigo}">${item.codigo}</option>
+        <option   value="${item.codigo}">${item.nome}</option>
     
     
     		</c:forEach>
     		  </select>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
       </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
