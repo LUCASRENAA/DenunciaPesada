@@ -210,6 +210,21 @@ public class EstudanteRepository implements GenericRepository<Estudante, String>
 		return null;
 	}
 
+
+
+
+	@Override
+	public List<Estudante> filtro(Professor professor) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Ocorrencia> filtro2(Estudante estudante) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 	 

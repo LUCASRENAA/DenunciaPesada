@@ -5,6 +5,7 @@
  */
 package com.devcaotics.model.repository;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.devcaotics.model.entities.Estudante;
@@ -26,5 +27,7 @@ public interface GenericRepository<T, I> {
 	Estudante readCodigo(String i);
 	Professor readProfessor(String i);
 	Ocorrencia read_integer(Integer i);
+    public List<T> filtro(Professor professor) throws SQLException;
+	public List<Ocorrencia> filtro2(Estudante estudante) throws SQLException;
 
 }

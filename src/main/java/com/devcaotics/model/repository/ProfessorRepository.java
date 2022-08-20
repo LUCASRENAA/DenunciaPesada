@@ -225,6 +225,28 @@ public class ProfessorRepository implements GenericRepository<Professor, String>
 		return null;
 	}
 
+
+
+
+
+
+
+	@Override
+	public List<Professor> filtro(Professor t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+
+	@Override
+	public List<Ocorrencia> filtro2(Estudante estudante) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	 
 
 

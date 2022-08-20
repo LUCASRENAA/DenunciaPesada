@@ -22,6 +22,14 @@ public class OcorrenciaController {
 		
 		m.addAttribute("ocorrencias",estudantes);
 		System.out.println(estudantes);
+		
+List<Estudante> estudantes2 = Facade.getCurrentInstance().readAllEstudantes();
+		
+		m.addAttribute("estudantes",estudantes2);
+		
+List<Professor> professores = Facade.getCurrentInstance().readAllProfessores();
+		
+		m.addAttribute("professores",professores);
 		return "home";
 		
 	}
@@ -66,4 +74,28 @@ List<Professor> professores = Facade.getCurrentInstance().readAllProfessores();
 	}
 	
 
+	
+	
+	@RequestMapping("/ocorrencia/filtro2/{codigo}")
+	public String visualiza4(Model m, @PathVariable("codigo") String codigo) {
+		
+		List <Ocorrencia> pedidos = Facade.getCurrentInstance().filtroProfessor(Facade.getCurrentInstance().readProfessor(codigo));
+		m.addAttribute("ocorrencias",pedidos);
+		m.addAttribute("codigo",codigo);
+
+		return "home2";
+		
+	}
+	
+	@RequestMapping("/ocorrencia/filtro3/{matricula}")
+	public String visualiza5(Model m, @PathVariable("matricula") String matricula) {
+		
+		List <Ocorrencia> pedidos = Facade.getCurrentInstance().filtroEstudante(Facade.getCurrentInstance().readCodigo(matricula));
+		m.addAttribute("ocorrencias",pedidos);
+		m.addAttribute("codigo",matricula);
+
+		return "home3";
+		
+	}
+	
 }

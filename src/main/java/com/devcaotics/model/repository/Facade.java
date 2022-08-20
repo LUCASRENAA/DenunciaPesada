@@ -10,6 +10,7 @@ import com.devcaotics.model.entities.Estudante;
 import com.devcaotics.model.entities.Ocorrencia;
 import com.devcaotics.model.entities.Professor;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -116,8 +117,32 @@ public class Facade {
 		// TODO Auto-generated method stub
         return this.rProfessor.readProfessor(codigo);
 	}
+	
+	
+	
+	public List<Ocorrencia> filtroProfessor(Professor professor) {
+		// TODO Auto-generated method stub
+        try {
+			return this.rOcorrencia.filtro(professor);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 
+	
+	public List<Ocorrencia> filtroEstudante(Estudante estudante) {
+		// TODO Auto-generated method stub
+        try {
+			return this.rOcorrencia.filtro2(estudante);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 
         
     

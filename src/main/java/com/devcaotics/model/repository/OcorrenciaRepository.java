@@ -30,7 +30,7 @@ public class OcorrenciaRepository implements GenericRepository<Ocorrencia, Strin
         
         String sql = "insert into ocorrencia(data, local, descricao, "
                 + "infoAdicional,codigoProfessor,matriculaEstudante) values (?,?,?,?,?,?)";
-        
+        System.out.println("chegandoaqui");
         try {
             PreparedStatement pstm = ConnectionManager.getCurrentConnection()
                     .prepareStatement(sql);
@@ -157,7 +157,6 @@ public class OcorrenciaRepository implements GenericRepository<Ocorrencia, Strin
                 
                 PreparedStatement pstm2 = ConnectionManager.getCurrentConnection()
                     .prepareStatement(sql2);
-                System.out.println(r.getString("matriculaEstudante"));
                 pstm2.setString(1, r.getString("matriculaEstudante"));
                 
                 ResultSet r2 = pstm2.executeQuery();
@@ -169,7 +168,6 @@ public class OcorrenciaRepository implements GenericRepository<Ocorrencia, Strin
                     c.setNome(r2.getString("nome"));
                     c.setCurso(r2.getString("curso"));
                     c.setAnoEntrada(r2.getInt("anoEntrada"));
-                    System.out.println("será que chego aqui?");
 
                     v.setEstudante(c);
                     
@@ -241,37 +239,134 @@ public class OcorrenciaRepository implements GenericRepository<Ocorrencia, Strin
 	public void delete(String i) {
 		// TODO Auto-generated method stub
 		String sql = "delete from ocorrencia where id = ?;";
-		System.out.println(sql);
-		System.out.println(i);
+
 
         try {
             
             PreparedStatement pstm = com.devcaotics.model.
                     dao.ConnectionManager.getCurrentConnection().prepareStatement(sql);
-			System.out.println("alo");
 
             pstm.setString(1, i);
-			System.out.println("alo2");
 
 			int rowCount = pstm.executeUpdate();
 			 
 			System.out
 					.println("Record Deleted successfully from database. Row Count returned is :: "
-							+ rowCount);				System.out.println("teste");
+							+ rowCount);				
 
             
         }
 	  
 	  catch (SQLException ex) {
             Logger.getLogger(sql);
-			System.out.println(sql);
 
         } catch (ClassNotFoundException ex) {
-			System.out.println("a");
 
             Logger.getLogger(sql);
         }
 		
 	}
     
+	
+public List<Ocorrencia> filtro(Professor professor) throws SQLException{
+		
+		List<Ocorrencia> fornadas = new ArrayList<>();
+		
+		String sql = "select * from ocorrencia as o join professor as p "
+				+ "on (o.codigoProfessor = p.codigo) where o.codigoProfessor = ?";
+		try {
+			PreparedStatement pstm = ConnectionManager.getCurrentConnection().prepareStatement(sql);
+			
+			pstm.setString(1, professor.getCodigo());
+			
+			ResultSet rs = pstm.executeQuery();
+
+			while(rs.next()) {
+				
+				Ocorrencia f = new Ocorrencia();
+				
+				f.setId(rs.getInt("id"));
+				f.setData(rs.getString("data"));
+				f.setLocal(rs.getString("local"));
+				f.setDescricao(rs.getString("descricao"));
+				f.setInfoAdicional(rs.getString("infoAdicional"));
+
+				Professor p = new Professor();
+				
+				p.setCodigo(rs.getString("codigo"));
+				p.setNome(rs.getString("nome"));
+
+				
+				Estudante e = new Estudante();
+				
+				e.setNome(rs.getString("nome"));
+				
+				f.setProfessor(p);
+				f.setEstudante(e);
+
+				fornadas.add(f);
+			}
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return fornadas;
+	}
+
+
+
+public List<Ocorrencia> filtro2(Estudante estudante) throws SQLException{
+		
+		List<Ocorrencia> fornadas = new ArrayList<>();
+		
+		String sql = "select * from ocorrencia as o join estudante as p "
+				+ "on (o.matriculaEstudante = p.matricula) where o.matriculaEstudante = ?";
+		try {
+			PreparedStatement pstm = ConnectionManager.getCurrentConnection().prepareStatement(sql);
+			
+			pstm.setString(1, estudante.getMatricula());
+			
+			ResultSet rs = pstm.executeQuery();
+
+			while(rs.next()) {
+				
+				Ocorrencia f = new Ocorrencia();
+				
+				f.setId(rs.getInt("id"));
+				f.setData(rs.getString("data"));
+				f.setLocal(rs.getString("local"));
+				f.setDescricao(rs.getString("descricao"));
+				f.setInfoAdicional(rs.getString("infoAdicional"));
+
+				Professor p = new Professor();
+				
+				p.setNome(rs.getString("nome"));
+
+				
+				Estudante e = new Estudante();
+				
+				e.setMatricula(rs.getString("matricula"));
+				e.setNome(rs.getString("nome"));
+				
+				f.setProfessor(p);
+				f.setEstudante(e);
+
+				fornadas.add(f);
+			}
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return fornadas;
+	}
+
+
+
+	
 }

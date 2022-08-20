@@ -30,51 +30,9 @@
 
     <main>
     
-    	
-    		  
-    		
-    		  
-    		    <script>
-  
-  function mudarSelect(valor){
-	  window.location.href = "http://127.0.0.1:8080/ocorrencia/filtro3/" + valor;
-
-
-	}
-  
-  
-  function mudarSelect2(valor){
-	  window.location.href = "http://127.0.0.1:8080/ocorrencia/filtro2/" + valor;
-
-	}
-  </script>
-  
-    <a href="/ocorrencia/cadastro">Cadastrar ocorrencia</a>
-    
-        <p></p>
-      Filtro de estudante
-      
-      	<select class="form-control"  onchange="mudarSelect(this.value)" id="teste3">
-  
-    <c:forEach items="${estudantes}" var="item">
-        <option value="${item.matricula}">${item.nome}</option>
-    
-    		</c:forEach>
-    		  </select>
-    		  </select>
-    <p></p>
-      Filtro de professor
-    		    <select class="form-control"onchange="mudarSelect2(this.value)" id="teste4">
-  
-    <c:forEach items="${professores}"  var="item">
-        <option   value="${item.codigo}">${item.nome}</option>
-    
-    
-    		</c:forEach>
-    		  </select>
    <table>
                        <tr>
-       <th>Ocorrências</th>    
+       <th>Ocorrências do professor de codigo:${codigo}</th>    
            </tr>
            </table>
       
