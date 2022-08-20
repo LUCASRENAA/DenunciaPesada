@@ -61,7 +61,6 @@
     
     		</c:forEach>
     		  </select>
-    		  </select>
     <p></p>
       Filtro de professor
     		    <select class="form-control"onchange="mudarSelect2(this.value)" id="teste4">
