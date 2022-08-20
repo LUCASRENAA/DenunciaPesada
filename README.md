@@ -6,8 +6,8 @@
 - [x] CRUD de Estudante
 - [x] Registro de ocorrencia
 - [x] Apresentação de todas as ocorrências cadastradas na página inicial
-- [ ] Filtro de ocorrências por professor
-- [ ] Filtro de ocorrências por estudante
+- [x] Filtro de ocorrências por professor
+- [x] Filtro de ocorrências por estudante
 
 
 # Demonstração
